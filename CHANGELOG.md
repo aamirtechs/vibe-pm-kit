@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.0 (2026-10-25)
+
+- GitHub Pages site: landing page with the spec scorer running fully in
+  the browser (scorer.js, a port of spec_lint.py kept in sync by tests),
+  live score, found and missing section lists, weak and full examples
+- Dark mode on the site, following the system preference with a toggle
+
 ## v1.0.0 (2026-10-25)
 
 Initial release.

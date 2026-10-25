@@ -7,6 +7,9 @@ prompt briefs, eval scorecards, and honest playbooks for training and
 tuning models, plus a zero-dependency spec linter that scores your spec
 before you build from it.
 
+**Live site: https://aamirtechs.github.io/vibe-pm-kit/** with the spec
+scorer running in your browser. Paste a spec, get the score, fix the gaps.
+
 Vibe coding made building fast. It did not make deciding what to build,
 proving the model behaves, or knowing when to fine-tune any easier. This
 kit is the missing product layer: small, practical, and opinionated.

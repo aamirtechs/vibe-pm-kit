@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vibe-pm-kit: The Product Management Kit for Vibe Coding</title>
+<meta name="description" content="Specs an AI can build, prompt briefs, eval scorecards, dataset cards, and honest playbooks for training and tuning models. Includes a free in-browser spec scorer.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234f2bd8'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="topbar">
+  <div class="wrap topbar-row">
+    <a class="logo" href="#"><span class="logo-mark">V</span> vibe-pm-kit</a>
+    <div class="top-links">
+      <a href="#scorer">Spec scorer</a>
+      <a href="#playbooks">Playbooks</a>
+      <a href="#templates">Templates</a>
+      <a href="#ladder">Training vs tuning</a>
+      <button id="btn-theme" class="theme-btn" type="button" aria-label="Toggle dark mode">🌙</button>
+      <a class="gh-btn" href="https://github.com/aamirtechs/vibe-pm-kit" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Product management for the AI building era</p>
+    <h1>Vibe coding made building fast.<br>This kit makes it <span class="grad">ship right</span>.</h1>
+    <p class="lede">Specs an AI can build, prompt briefs, eval scorecards, dataset cards, and honest playbooks for training and tuning models. Free, open source, no signup.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#scorer">Score your spec free</a>
+      <a class="btn btn-ghost" href="https://github.com/aamirtechs/vibe-pm-kit" target="_blank" rel="noopener">Get the kit on GitHub</a>
+    </div>
+    <div class="chips">
+      <span class="chip"><strong>5</strong> playbooks</span>
+      <span class="chip"><strong>6</strong> templates</span>
+      <span class="chip"><strong>2</strong> spec scorers (web + CLI)</span>
+      <span class="chip"><strong>100/100</strong> template score</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="scorer" class="card scorer">
+    <h2>Try the spec scorer</h2>
+    <p class="sub">Paste a product spec written for an AI builder. It checks for the nine sections that stop an AI from inventing your product for you. Runs 100% in your browser; nothing is uploaded. Prefer the terminal? The same logic ships as a zero-dependency Python CLI in the repo.</p>
+    <div class="scorer-grid">
+      <textarea id="spec-input" rows="16" aria-label="Paste your spec here" spellcheck="false"></textarea>
+      <div class="score-panel">
+        <div class="score-ring"><span id="score-num">0</span><span class="of">/100</span></div>
+        <p id="score-verdict" class="verdict"></p>
+        <ul id="found-list" class="check-list found"></ul>
+        <ul id="missing-list" class="check-list missing"></ul>
+      </div>
+    </div>
+    <div class="scorer-actions">
+      <button class="btn btn-small" type="button" id="btn-weak">Load a weak spec (55)</button>
+      <button class="btn btn-small" type="button" id="btn-full">Load the full template (100)</button>
+    </div>
+  </section>
+
+  <section id="playbooks">
+    <h2 class="section-h">The playbooks</h2>
+    <div class="grid">
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/docs/01-the-vibe-pm-loop.md" target="_blank" rel="noopener"><h3>The vibe PM loop</h3><p>Frame, spec, brief, build, eval, ship, learn. One pass per feature.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/docs/02-writing-specs-ai-can-build.md" target="_blank" rel="noopener"><h3>Specs an AI can build</h3><p>The seven rules and the anti-patterns that make generated apps collapse.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/docs/03-training-vs-tuning.md" target="_blank" rel="noopener"><h3>Training vs tuning</h3><p>The decision ladder from prompts to RAG to fine-tuning, with honest costs.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/docs/04-evals.md" target="_blank" rel="noopener"><h3>Evals</h3><p>Build eval sets and gate releases on numbers, not demos.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/docs/05-launch-and-grow.md" target="_blank" rel="noopener"><h3>Launch and grow</h3><p>Ship small, prove it works, spread without spam tricks.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/tools/spec_lint.py" target="_blank" rel="noopener"><h3>spec_lint.py (CLI)</h3><p>The same scorer for your terminal and CI, with a pass/fail gate.</p></a>
+    </div>
+  </section>
+
+  <section id="templates">
+    <h2 class="section-h">The templates</h2>
+    <div class="grid">
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/templates/prd-template.md" target="_blank" rel="noopener"><h3>PRD template</h3><p>Problem, evidence, scope and rollout in one page.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/templates/spec-template.md" target="_blank" rel="noopener"><h3>Spec template</h3><p>The 100-point spec structure the scorer checks for.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/templates/prompt-brief-template.md" target="_blank" rel="noopener"><h3>Prompt brief template</h3><p>A mini spec for any repeatable AI task.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/templates/dataset-card-template.md" target="_blank" rel="noopener"><h3>Dataset card</h3><p>Fill before any training or tuning run. Consent, PII, gaps.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/templates/eval-scorecard-template.md" target="_blank" rel="noopener"><h3>Eval scorecard</h3><p>Before and after numbers for every model or prompt change.</p></a>
+      <a class="tile" href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/templates/launch-checklist.md" target="_blank" rel="noopener"><h3>Launch checklist</h3><p>Product, AI behaviour, data, support, and growth checks.</p></a>
+    </div>
+  </section>
+
+  <section id="ladder" class="card ladder">
+    <h2>The training vs tuning ladder</h2>
+    <p class="sub">Climb only when the rung below measurably fails on your eval set.</p>
+    <table>
+      <thead><tr><th>Rung</th><th>Move</th><th>Reach for it when</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Better prompts</td><td>Always start here. Most quality problems are instruction problems.</td></tr>
+        <tr><td>2</td><td>Few-shot examples</td><td>Output shape or tone is inconsistent and examples fix it.</td></tr>
+        <tr><td>3</td><td>RAG (retrieval)</td><td>The model needs your facts, and facts change.</td></tr>
+        <tr><td>4</td><td>Fine-tuning</td><td>Behaviour must be consistent at scale and prompts plateau.</td></tr>
+        <tr><td>5</td><td>Training from scratch</td><td>Almost never for product teams. The product is the model itself.</td></tr>
+      </tbody>
+    </table>
+    <p class="sub"><a href="https://github.com/aamirtechs/vibe-pm-kit/blob/main/docs/03-training-vs-tuning.md" target="_blank" rel="noopener">Read the full playbook</a> for costs, data hygiene rules, and what fine-tuning can and cannot fix.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>vibe-pm-kit is free and open source under the MIT license, by <a href="https://aamirtechs.com" target="_blank" rel="noopener">AamirTechs</a>. If it helps you ship, <a href="https://github.com/aamirtechs/vibe-pm-kit" target="_blank" rel="noopener">star the repo</a> so other builders find it.</p>
+  </div>
+</footer>
+
+<script src="scorer.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
